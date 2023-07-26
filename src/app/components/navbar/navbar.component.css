@@ -1,0 +1,3 @@
+.navbar-item {
+  @apply block align-middle text-center text-white rounded bg-transparent p-0 md:hover:text-cyan-500
+}
