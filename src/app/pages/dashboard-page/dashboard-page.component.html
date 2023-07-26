@@ -1,7 +1,195 @@
-<section>
-  <div>
-    <div></div>
-    <div></div>
-    <div></div>
+<section class="min-h-screen flex flex-col">
+  <div class="pt-28 mx-auto">
+    <ol class="flex flex-row flex-wrap">
+      <li *ngFor="let feat of features" class="mx-auto px-16 my-2">
+        <div
+          class="max-w-sm p-2 bg-gradient-to-br from-gray-950 from-60% to-slate-900 to-90% rounded-lg shadow"
+        >
+          <div class="flex flex-row">
+            <div class="px-3 w-52">
+              <h5 class="text-xs font-bold tracking-tight text-gray-500">
+                {{ feat.title }}
+              </h5>
+              <h5 class="mb-2 text-md font-bold tracking-tight text-white">
+                {{ feat.subTitle }}
+              </h5>
+            </div>
+            <div
+              [ngSwitch]="feat.icon"
+              class="inline-flex items-center text-sm h-13 w-13 px-2 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              <i
+                *ngSwitchCase="'file'"
+                class="bi bi-file-earmark-text text-3xl"
+              ></i>
+              <i
+                *ngSwitchCase="'person'"
+                class="bi bi-person-fill text-3xl"
+              ></i>
+              <i *ngSwitchCase="'stack'" class="bi bi-stack text-3xl"></i>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+  <div class="mt-10">
+    <ol class="flex flex-col flex-wrap">
+      <li *ngFor="let bench of benchmarks" class="my-2">
+        <div>
+          <h2 class="text-4xl font-semibold text-white">{{ bench.title }}</h2>
+        </div>
+        <div class="pt-5 pl-5">
+          <ol class="flex flex-row flex-wrap">
+            <li class="pr-16">
+              <div class="px-2 pt-2 pb-0">
+                <div class="flex flex-row items-center">
+                  <div
+                    class="inline-flex items-center text-sm px-2 py-1 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    <i class="bi bi-stack text-md"></i>
+                  </div>
+                  <div class="px-3">
+                    <h5
+                      class="mb-2 text-sm font-medium tracking-tight text-gray-400"
+                    >
+                      Accuracy
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="pl-2">
+                <div class="mb-1 text-base font-medium text-white">
+                  {{ bench.accuracy }}
+                </div>
+                <div
+                  class="w-[90%] bg-gray-200 rounded-full h-[3px] mb-4 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-blue-600 h-[3px] rounded-full dark:bg-blue-500"
+                    style="width: 45%"
+                  ></div>
+                </div>
+              </div>
+            </li>
+            <li class="pr-16">
+              <div class="px-2 pt-2 pb-0">
+                <div class="flex flex-row items-center">
+                  <div
+                    class="inline-flex items-center text-sm px-2 py-1 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    <i class="bi bi-stack text-md"></i>
+                  </div>
+                  <div class="px-3">
+                    <h5
+                      class="mb-2 text-sm font-medium tracking-tight text-gray-400"
+                    >
+                      Precision
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="pl-2">
+                <div class="mb-1 text-base font-medium text-white">
+                  {{ bench.precision }}
+                </div>
+                <div
+                  class="w-[90%] bg-gray-200 rounded-full h-[3px] mb-4 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-blue-600 h-[3px] rounded-full dark:bg-blue-500"
+                    style="width: 45%"
+                  ></div>
+                </div>
+              </div>
+            </li>
+            <li class="pr-16">
+              <div class="px-2 pt-2 pb-0">
+                <div class="flex flex-row items-center">
+                  <div
+                    class="inline-flex items-center text-sm px-2 py-1 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    <i class="bi bi-stack text-md"></i>
+                  </div>
+                  <div class="px-3">
+                    <h5
+                      class="mb-2 text-sm font-medium tracking-tight text-gray-400"
+                    >
+                      Recall
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="pl-2">
+                <div class="mb-1 text-base font-medium text-white">
+                  {{ bench.recall }}
+                </div>
+                <div
+                  class="w-[90%] bg-gray-200 rounded-full h-[3px] mb-4 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-blue-600 h-[3px] rounded-full dark:bg-blue-500"
+                    style="width: 45%"
+                  ></div>
+                </div>
+              </div>
+            </li>
+            <li class="pr-16">
+              <div class="px-2 pt-2 pb-0">
+                <div class="flex flex-row items-center">
+                  <div
+                    class="inline-flex items-center text-sm px-2 py-1 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    <i class="bi bi-stack text-md"></i>
+                  </div>
+                  <div class="px-3">
+                    <h5
+                      class="mb-2 text-sm font-medium tracking-tight text-gray-400"
+                    >
+                      F1-Score
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="pl-2">
+                <div class="mb-1 text-base font-medium text-white">
+                  {{ bench.score }}
+                </div>
+                <div
+                  class="w-[90%] bg-gray-200 rounded-full h-[3px] mb-4 dark:bg-gray-700"
+                >
+                  <div
+                    class="bg-blue-600 h-[3px] rounded-full dark:bg-blue-500"
+                    style="width: 45%"
+                  ></div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="flex flex-col flex-wrap">
+          <div>
+            <h2>Confusion Matrix</h2>
+            <img
+              class="border-none"
+              [src]="bench.imgConfusion"
+              alt="image"
+              height="auto"
+              class="mx-auto md:w-[30vw] lg:w-[30%] sm:w-[10%]"
+            />
+          </div>
+          <div>
+            <h2>Accuracy</h2>
+            <img
+              class="border-none"
+              src="assets/image/logo.svg"
+              alt="image"
+              height="auto"
+              class="mx-auto md:w-[30vw] lg:w-[30%] sm:w-[10%]"
+            />
+          </div>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
