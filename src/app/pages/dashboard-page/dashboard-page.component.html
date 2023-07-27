@@ -35,7 +35,7 @@
   </div>
   <div class="mt-10">
     <ol class="flex flex-col flex-wrap">
-      <li *ngFor="let bench of benchmarks" class="my-2">
+      <li *ngFor="let bench of benchmarks" class="mt-2 mb-14">
         <div>
           <h2 class="text-4xl font-semibold text-white">{{ bench.title }}</h2>
         </div>
@@ -47,7 +47,7 @@
                   <div
                     class="inline-flex items-center text-sm px-2 py-1 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
-                    <i class="bi bi-stack text-md"></i>
+                    <i class="bi bi-pin-angle-fill text-md"></i>
                   </div>
                   <div class="px-3">
                     <h5
@@ -78,7 +78,7 @@
                   <div
                     class="inline-flex items-center text-sm px-2 py-1 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
-                    <i class="bi bi-stack text-md"></i>
+                    <i class="bi bi-geo-alt-fill text-md"></i>
                   </div>
                   <div class="px-3">
                     <h5
@@ -109,7 +109,7 @@
                   <div
                     class="inline-flex items-center text-sm px-2 py-1 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
-                    <i class="bi bi-stack text-md"></i>
+                    <i class="bi bi-geo-fill text-md"></i>
                   </div>
                   <div class="px-3">
                     <h5
@@ -140,7 +140,7 @@
                   <div
                     class="inline-flex items-center text-sm px-2 py-1 font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
-                    <i class="bi bi-stack text-md"></i>
+                    <i class="bi bi-award-fill text-md"></i>
                   </div>
                   <div class="px-3">
                     <h5
@@ -167,25 +167,41 @@
             </li>
           </ol>
         </div>
-        <div class="flex flex-col flex-wrap">
-          <div>
-            <h2>Confusion Matrix</h2>
+        <div class="flex flex-wrap pt-5">
+          <div class="mx-0 flex flex-col max-w-[33%]">
+            <div class="mx-auto mb-5 text-white font-semibold text-lg">
+              <h2 class="">CONFUSION MATRIX</h2>
+            </div>
             <img
               class="border-none"
               [src]="bench.imgConfusion"
               alt="image"
               height="auto"
-              class="mx-auto md:w-[30vw] lg:w-[30%] sm:w-[10%]"
+              class="mx-auto md:w-[70vw] lg:w-[70%] sm:w-[70%]"
             />
           </div>
-          <div>
-            <h2>Accuracy</h2>
+          <div class="mx-0 flex flex-col max-w-[33%]">
+            <div class="mx-auto mb-5 text-white font-semibold text-lg">
+              <h2>ACCURACY</h2>
+            </div>
             <img
               class="border-none"
-              src="assets/image/logo.svg"
+              [src]="bench.imgAccuracy"
               alt="image"
               height="auto"
-              class="mx-auto md:w-[30vw] lg:w-[30%] sm:w-[10%]"
+              class="mx-auto md:w-[70vw] lg:w-[70%] sm:w-[70%]"
+            />
+          </div>
+          <div class="mx-0 flex flex-col max-w-[33%]">
+            <div class="mx-auto mb-5 text-white font-semibold text-lg">
+              <h2>ACCURACY</h2>
+            </div>
+            <img
+              class="border-none"
+              [src]="bench.imgAccuracy"
+              alt="image"
+              height="auto"
+              class="mx-auto md:w-[70vw] lg:w-[70%] sm:w-[70%]"
             />
           </div>
         </div>
