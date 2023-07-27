@@ -6,4 +6,5 @@ export interface Benchmark {
   score: string;
   imgConfusion: string;
   imgAccuracy: string;
+  imgLoss : string;
 }
