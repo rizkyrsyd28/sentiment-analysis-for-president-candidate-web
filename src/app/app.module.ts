@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { AspectExtractionPageComponent } from './pages/aspect-extraction-page/aspect-extraction-page.component';
+import { AspectClassificationPageComponent } from './pages/aspect-classification-page/aspect-classification-page.component';
 import { ButtonComponent } from './components/button/button.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     AspectExtractionPageComponent,
     ButtonComponent,
     DashboardPageComponent,
-
+    AspectClassificationPageComponent
   ],
   imports: [BrowserModule, AppRoutingModule,AngularMaterialModule],
   providers: [],
