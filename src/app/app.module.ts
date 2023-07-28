@@ -7,8 +7,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AspectExtractionPageComponent } from './pages/aspect-extraction-page/aspect-extraction-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ModelAccuracyPageComponent } from './pages/model-accuracy-page/model-accuracy-page.component';
+import { AspectClassificationComponent } from './pages/aspect-classification/aspect-classification.component';
+import { SentimentClassificationComponent } from './pages/sentiment-classification/sentiment-classification.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { ModelAccuracyPageComponent } from './pages/model-accuracy-page/model-ac
     HomePageComponent,
     AspectExtractionPageComponent,
     DashboardPageComponent,
-    DropdownComponent,
     ModelAccuracyPageComponent,
+    AspectClassificationComponent,
+    SentimentClassificationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

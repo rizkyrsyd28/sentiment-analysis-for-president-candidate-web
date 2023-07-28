@@ -1,16 +1,33 @@
 <section class="min-h-screen flex flex-col">
-  <div class="pt-28 mx-auto mb-8">
-    <label
-      class="block max-w-sm mb-2 text-sm font-medium text-white"
-      for="file_input"
-      >Upload file</label
-    >
-    <input
-      class="block w-full text-sm text-white border border-gray-300 rounded-lg cursor-pointer bg-transparent focus:outline-none"
-      id="file_input"
-      type="file"
-      accept=".xlsx"
-    />
+  <div class="pt-28 mx-auto">
+    <div class="flex flex-row">
+      <div class="mx-10">
+        <div class="text-white p-4 pb-0">
+          <h2>Choose Machine Learning Model</h2>
+        </div>
+        <select
+          class="m-4 w-32 border rounded-lg border-secondary bg-secondary bg-opacity-60 text-white"
+          (change)="onChangeModel($event)"
+        >
+          <option *ngFor="let model of optionsModel" [value]="model">
+            {{ model }}
+          </option>
+        </select>
+      </div>
+      <div class="mx-16 mb-8">
+        <label
+          class="block p-4 max-w-sm mb-2 text-sm font-medium text-white"
+          for="file_input"
+          >Upload file</label
+        >
+        <input
+          class="block w-full text-sm text-white border border-gray-300 rounded-lg cursor-pointer bg-transparent focus:outline-none"
+          id="file_input"
+          type="file"
+          accept=".xlsx"
+        />
+      </div>
+    </div>
   </div>
   <div class="mx-auto flex flex-col" *ngIf="isInvalid || isValid">
     <div class="my-6 mx-auto">
