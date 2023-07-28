@@ -81,4 +81,8 @@ export class AspectExtractionPageComponent {
       },
     ];
   }
+
+  onFileSelected(event: Event) {}
+
+  async downloadFile(event: Event) {}
 }
