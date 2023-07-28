@@ -1,0 +1,99 @@
+<section class="min-h-screen flex flex-col">
+  <div class="pt-28 mx-auto flex flex-row">
+    <div class="content-center">
+      <div>
+        <div class="text-white p-4 pb-0">
+          <h2>Choose Machine Learning Model</h2>
+        </div>
+        <select
+          class="m-4 w-32 border rounded-lg border-secondary bg-secondary bg-opacity-60 text-white"
+          (change)="onChangeModel($event)"
+        >
+          <option *ngFor="let model of optionsModel" [value]="model">
+            {{ model }}
+          </option>
+        </select>
+      </div>
+      <div>
+        <div class="text-white p-4 pb-0">
+          <h2>Choose Classification Class</h2>
+        </div>
+        <select
+          class="m-4 w-32 border rounded-lg border-secondary bg-secondary bg-opacity-60 text-white"
+          (change)="onChangeClass($event)"
+        >
+          <option *ngFor="let class of optionsClass" [value]="class">
+            {{ class }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mx-28">
+      <div
+        *ngIf="modelSelected === 'CNN' && classSelected === 'Sentiment'"
+        class="w-[80vh] h-[80vh] mx-auto"
+      >
+        <div
+          class="mx-auto bg-opacity-80 backdrop-blur-md shadow-lg bg-gradient-to-b from-green-300 to-green-500 border-8 rounded-full border-lightprimary w-[90%] h-[90%] flex"
+        >
+          <div class="mx-auto my-auto text-center">
+            <h1 class="text-4xl text-white text-opacity-70">Accuracy</h1>
+            <h1 class="text-6xl text-white font-bold">99.6 %</h1>
+            <h2 class="text-xl text-white text-opacity-70 tracking-[0.2em]">
+              TOTAL SCORE
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="modelSelected === 'LSTM' && classSelected === 'Sentiment'"
+        class="w-[80vh] h-[80vh] mx-auto"
+      >
+        <div
+          class="mx-auto bg-opacity-80 backdrop-blur-md shadow-lg bg-gradient-to-b from-green-300 to-green-500 border-8 rounded-full border-lightprimary w-[90%] h-[90%] flex"
+        >
+          <div class="mx-auto my-auto text-center">
+            <h1 class="text-4xl text-white text-opacity-70">Accuracy</h1>
+            <h1 class="text-6xl text-white font-bold">98.9 %</h1>
+            <h2 class="text-xl text-white text-opacity-70 tracking-[0.2em]">
+              TOTAL SCORE
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="modelSelected === 'CNN' && classSelected === 'Aspect'"
+        class="w-[80vh] h-[80vh] mx-auto"
+      >
+        <div
+          class="mx-auto bg-opacity-80 backdrop-blur-md shadow-lg bg-gradient-to-b from-yellow-300 to-green-300 border-8 rounded-full border-lightprimary w-[90%] h-[90%] flex"
+        >
+          <div class="mx-auto my-auto text-center">
+            <h1 class="text-4xl text-white text-opacity-70">Accuracy</h1>
+            <h1 class="text-6xl text-white font-bold">77.2 %</h1>
+            <h2 class="text-xl text-white text-opacity-70 tracking-[0.2em]">
+              TOTAL SCORE
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="modelSelected === 'LSTM' && classSelected === 'Aspect'"
+        class="w-[80vh] h-[80vh] mx-auto"
+      >
+        <div
+          class="mx-auto bg-opacity-80 backdrop-blur-md shadow-lg bg-gradient-to-b from-yellow-300 to-green-300 border-8 rounded-full border-lightprimary w-[90%] h-[90%] flex"
+        >
+          <div class="mx-auto my-auto text-center">
+            <h1 class="text-4xl text-white text-opacity-70">Accuracy</h1>
+            <h1 class="text-6xl text-white font-bold">78.0 %</h1>
+            <h2 class="text-xl text-white text-opacity-70 tracking-[0.2em]">
+              TOTAL SCORE
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

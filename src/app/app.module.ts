@@ -7,6 +7,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AspectExtractionPageComponent } from './pages/aspect-extraction-page/aspect-extraction-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { ModelAccuracyPageComponent } from './pages/model-accuracy-page/model-accuracy-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
     HomePageComponent,
     AspectExtractionPageComponent,
     DashboardPageComponent,
+    DropdownComponent,
+    ModelAccuracyPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
