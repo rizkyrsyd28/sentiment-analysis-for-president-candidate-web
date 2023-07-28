@@ -1,15 +1,67 @@
 <section class="min-h-screen flex flex-col">
-  <div class="pt-28 mx-autoe">
-    <label class="block mb-2 text-sm font-medium text-white" for="file_input"
+  <div class="pt-28 mx-auto mb-8">
+    <label
+      class="block max-w-sm mb-2 text-sm font-medium text-white"
+      for="file_input"
       >Upload file</label
     >
     <input
       class="block w-full text-sm text-white border border-gray-300 rounded-lg cursor-pointer bg-transparent focus:outline-none"
       id="file_input"
       type="file"
+      accept=".xlsx"
     />
   </div>
-  <div>
-    <div></div>
+  <div class="mx-auto flex flex-col" *ngIf="isInvalid || isValid">
+    <div class="my-6 mx-auto">
+      <h2 class="text-2xl font-semibold text-white">RESULT</h2>
+    </div>
+    <div *ngIf="isInvalid && !isValid" class="my-6 mx-auto">
+      <h2 class="text-2xl font-semibold text-red-700">Error</h2>
+    </div>
+
+    <div *ngIf="isValid" class="relative overflow-x-auto w-[100%]">
+      <table class="w-full text-sm text-left text-white border rounded-xl">
+        <thead class="text-xs uppercase bg-gray-700 text-gray-400">
+          <tr>
+            <th scope="col" class="px-6 py-3 max-w-xs">No</th>
+            <th scope="col" class="px-6 py-3">Kalimat</th>
+            <th scope="col" class="px-6 py-3">Aspek</th>
+            <th scope="col" class="px-6 py-3">Opini</th>
+            <th scope="col" class="px-6 py-3">True <br />Tuple</th>
+            <th scope="col" class="px-6 py-3">Sentiment</th>
+            <th scope="col" class="px-6 py-3">Meta-aspect</th>
+            <th scope="col" class="px-6 py-3">Meta-opinion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let data of datas"
+            class="bg-gray-800 backdrop-blur-lg bg-opacity-50 shadow-sm shadow-gray-400"
+          >
+            <th scope="row" class="px-5 py-4 font-medium text-gray-400">
+              {{ data.no }}
+            </th>
+            <td class="px-6 py-1 max-w-md break-all">
+              {{ data.kalimat }}
+            </td>
+            <td class="px-6 py-1">{{ data.aspek }}</td>
+            <td class="px-6 py-1">{{ data.opini }}</td>
+            <td class="px-6 py-1">{{ data.trueTuple }}</td>
+            <td class="px-6 py-1">{{ data.sentiment }}</td>
+            <td class="px-6 py-1">{{ data.metaAspect }}</td>
+            <td class="px-6 py-1">{{ data.metaOpinion }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div *ngIf="isValid" class="mx-auto mt-28">
+    <button
+      type="button"
+      class="px-10 py-2 text-base font-medium text-center text-white shadow-sm bg-primary rounded-lg hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300"
+    >
+      Export Graph
+    </button>
   </div>
 </section>
