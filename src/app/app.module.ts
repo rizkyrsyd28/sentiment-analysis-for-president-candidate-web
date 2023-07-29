@@ -11,7 +11,6 @@ import { AspectExtractionPageComponent } from './pages/aspect-extraction-page/as
 import { AspectClassificationPageComponent } from './pages/aspect-classification-page/aspect-classification-page.component';
 import { SentimentClassificationPageComponent } from './pages/sentiment-classification-page/sentiment-classification-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
-import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { ModelAccuracyPageComponent } from './pages/model-accuracy-page/model-accuracy-page.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { ModelAccuracyPageComponent } from './pages/model-accuracy-page/model-ac
     HomePageComponent,
     AspectExtractionPageComponent,
     DashboardPageComponent,
-    DropdownComponent,
     ModelAccuracyPageComponent,
     AspectClassificationPageComponent,
     SentimentClassificationPageComponent
