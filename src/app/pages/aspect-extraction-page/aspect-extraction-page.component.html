@@ -10,13 +10,15 @@
       id="file_input"
       type="file"
       accept=".xlsx"
+      webkitdirectory 
+      (change)="onFolderSelected($event)"
     />
   </div>
-  <div class="mx-auto flex flex-col" *ngIf="isInvalid || isValid">
+  <div class="mx-auto flex flex-col">
     <div class="my-6 mx-auto">
       <h2 class="text-2xl font-semibold text-white">RESULT</h2>
     </div>
-    <div *ngIf="isInvalid && !isValid" class="my-6 mx-auto">
+    <div *ngIf="isInvalid" class="my-6 mx-auto">
       <h2 class="text-2xl font-semibold text-red-700">Error</h2>
     </div>
 
@@ -25,13 +27,13 @@
         <thead class="text-xs uppercase bg-gray-700 text-gray-400">
           <tr>
             <th scope="col" class="px-6 py-3 max-w-xs">No</th>
-            <th scope="col" class="px-6 py-3">Kalimat</th>
+            <th scope="col" class="px-6 py-3 max-w-xl">Kalimat</th>
             <th scope="col" class="px-6 py-3">Aspek</th>
             <th scope="col" class="px-6 py-3">Opini</th>
             <th scope="col" class="px-6 py-3">True <br />Tuple</th>
             <th scope="col" class="px-6 py-3">Sentiment</th>
-            <th scope="col" class="px-6 py-3">Meta-aspect</th>
-            <th scope="col" class="px-6 py-3">Meta-opinion</th>
+            <th scope="col" class="px-6 py-3 ">Meta-aspect</th>
+            <th scope="col" class="px-6 py-3 ">Meta-opinion</th>
           </tr>
         </thead>
         <tbody>
@@ -56,12 +58,13 @@
       </table>
     </div>
   </div>
-  <div *ngIf="isValid" class="mx-auto mt-28">
+  <div *ngIf="isValid" class="mx-auto mt-28 mb-8">
     <button
       type="button"
       class="px-10 py-2 text-base font-medium text-center text-white shadow-sm bg-primary rounded-lg hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-blue-300"
+      (click)="downloadFile()"
     >
-      Export Graph
+      Download File
     </button>
   </div>
 </section>
